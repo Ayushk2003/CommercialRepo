@@ -8,3 +8,8 @@ export { default as ProductShape } from "./ProductShape";
 export { default as ProductShowcase } from "./ProductShowcase";
 export { default as PromoStrip } from "./PromoStrip";
 export { default as SiteHeader } from "./SiteHeader";
+export { default as SidebarNav } from "./SidebarNav";
+export { default as ClothingComingSoon } from "./ClothingComingSoon";
+export { default as CommingSoon } from "./ComingSoon";
+export { default as SiteFooter } from "./SiteFooter";
+export { default as AppLayout } from "./AppLayout";

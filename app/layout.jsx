@@ -1,14 +1,20 @@
 import "./globals.css";
+import AppLayout from "./components/AppLayout";
 
 export const metadata = {
   title: "VibeVault Streetwear",
   description: "Interactive streetwear ecommerce storefront with Supabase and Razorpay checkout."
 };
 
-export default function RootLayout({ children }) {
+export default function Layout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <AppLayout>{children}</AppLayout>
+      </body>
     </html>
   );
 }
+
+
+

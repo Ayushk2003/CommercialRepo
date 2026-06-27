@@ -18,11 +18,6 @@ export default function CartPanel({ cartOpen, cartLines, customer, setCustomer, 
         ))}
       </div>
       <div className="cart-footer">
-        <div className="customer-fields">
-          <input value={customer.name} onChange={(event) => setCustomer({ ...customer, name: event.target.value })} placeholder="Name" />
-          <input value={customer.email} onChange={(event) => setCustomer({ ...customer, email: event.target.value })} placeholder="Email" type="email" />
-          <input value={customer.phone} onChange={(event) => setCustomer({ ...customer, phone: event.target.value })} placeholder="Phone" />
-        </div>
         <div className="total-row"><span>Subtotal</span><strong>{formatPrice(subtotal)}</strong></div>
         {checkoutStatus && <p className="checkout-status">{checkoutStatus}</p>}
         <button className="button primary full" type="button" onClick={startCheckout} disabled={!cartLines.length}>

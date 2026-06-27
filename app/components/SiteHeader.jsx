@@ -1,6 +1,18 @@
 import { Menu, Search, ShoppingBag } from "lucide-react";
 
-export default function SiteHeader({ brand, cartCount, mobileNavOpen, navItems, query, searchPlaceholder, setMobileNavOpen, setQuery, openCart }) {
+export default function SiteHeader({
+  brand,
+  cartCount,
+  mobileNavOpen,
+  navItems,
+  query,
+  searchPlaceholder,
+  setMobileNavOpen,
+  setQuery,
+  openCart,
+  sidebarDrawerOpen,
+  setSidebarDrawerOpen
+}) {
   return (
     <header className="site-header">
       <a className="brand" href="#top" aria-label={brand.ariaLabel}>
@@ -17,14 +29,34 @@ export default function SiteHeader({ brand, cartCount, mobileNavOpen, navItems, 
           <Search size={18} aria-hidden="true" />
           <input value={query} onChange={(event) => setQuery(event.target.value)} type="search" placeholder={searchPlaceholder} />
         </label>
-        <button className="icon-button mobile-menu" type="button" onClick={() => setMobileNavOpen((value) => !value)} aria-label="Toggle menu">
+
+        <button
+          className="icon-button mobile-menu"
+          type="button"
+          onClick={() => setMobileNavOpen((value) => !value)}
+          aria-label="Toggle menu"
+          aria-expanded={mobileNavOpen}
+        >
           <Menu size={20} />
         </button>
+
+        <button
+          className="icon-button"
+          type="button"
+          onClick={() => setSidebarDrawerOpen((value) => !value)}
+          aria-label="Open sidebar"
+          aria-expanded={sidebarDrawerOpen}
+        >
+          <Menu size={20} />
+        </button>
+
         <button className="icon-button" type="button" onClick={openCart} aria-label="Open cart">
           <ShoppingBag size={20} />
           <span className="cart-count">{cartCount}</span>
         </button>
       </div>
+
+
     </header>
   );
 }
